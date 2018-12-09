@@ -563,6 +563,27 @@ if (message.content.toLowerCase().startsWith(prefix + `close`)) {
  
 });
 
+	
+	
+	
+client.on("message", message => {
+    const prefix = "F"
+             
+          if(!message.channel.guild) return;
+   if(message.author.bot) return;
+      if(message.content === "Fimage"){
+          const embed = new Discord.RichEmbed()
+ 
+      .setTitle(`هذه هي صورة سيرفر ** ${message.guild.name} **`)
+  .setAuthor(message.author.username, message.guild.iconrURL)
+    .setColor(0x164fe3)
+    .setImage(message.guild.iconURL)
+    .setURL(message.guild.iconrURL)
+                    .setTimestamp()
+ 
+   message.channel.send({embed});
+      }
+  });
 
 
 client.login(process.env.BOT_TOKEN);
